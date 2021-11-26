@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { UserForm } from './components/UserForm';
+import { UserForm } from './components/UserForm/UserForm';
 import { UserList } from './components/UserList';
 import { User } from './type';
+import './App.css';
 
 function App() {
   const [users, setUsers] = useState<User[] | []>([])
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Кількість користувачів: {users.length}</h1>
+        <h1>Кількість контактів: {users.length}</h1>
       </header>
       <UserForm
         users={users}

@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react'
-import { User } from '../type'
+import { User } from '../../type'
+import './UserForm.css'
 
 type Props = {
   addUser: (user: User) => void
@@ -29,33 +30,48 @@ export const UserForm: React.FC<Props> = ({ users, addUser }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="form"
+    >
+      <div className="form--children">
+        Name:
+        <br />
       <input
         type="text"
         value={name}
         onChange={(event) => setName(event.target.value)}
         placeholder="name"
       />
+      </div>
 
+      <div className="form--children">
+        Surname:
+        <br />
       <input
         type="text"
         value={surname}
         onChange={(event) => setSurname(event.target.value)}
         placeholder="surname"
       />
+      </div>
 
+      <div className="form--children">
+        Email:
+        <br />
       <input
         type="text"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
         placeholder="email"
       />
+      </div>
 
-      <button
-        type="submit"
-      >
+      <div className="form--children">
+      <button type="submit">
         Зберегти
       </button>
+      </div>
     </form>
   )
 }
