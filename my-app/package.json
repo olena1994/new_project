@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://olena1994.github.io/my-app",
+  "homepage": "https://olena1994.github.io",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -42,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

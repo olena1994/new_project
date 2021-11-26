@@ -1,11 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { UserForm } from './components/UserForm';
+import { UserList } from './components/UserList';
+import { User } from './type';
 
 function App() {
+  const [users, setUsers] = useState<User[] | []>([])
+
+  const addUser = (newUser: User) => {
+    setUsers([...users, newUser])
+  }
+
+  const removeUser = (id: number) => {
+    setUsers([...users.filter((user) => user.id !== id)])
+  }
+
   return (
     <div className="App">
-      Старт
+      <header>
+        <h1>Кількість користувачів: {users.length}</h1>
+      </header>
+      <UserForm
+        users={users}
+        addUser={addUser}
+      />
+      {users.length > 0 && (
+        <div>
+          <h3>Список користувачів:</h3>
+          <UserList
+            users={users}
+            removeUser={removeUser}
+          />
+        </div>
+      )}
     </div>
   );
 }
