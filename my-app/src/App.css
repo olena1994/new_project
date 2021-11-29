@@ -1,3 +1,18 @@
 .App {
-  margin-left: 10px;
+  margin: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.App--list {
+  display: flex;
+  flex-direction: row;
 }
